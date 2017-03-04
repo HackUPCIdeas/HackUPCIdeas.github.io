@@ -1,7 +1,6 @@
 
 class ModalController {
   constructor($uibModalInstance) {
-    console.log("test")
     this.ok = () => {
       console.log("ok")
       $uibModalInstance.close();

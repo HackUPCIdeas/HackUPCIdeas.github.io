@@ -25,6 +25,12 @@ export default function($stateProvider, $urlRouterProvider, $locationProvider) {
       controllerAs: "vm",
       templateUrl: 'pages/dashboard.html'
     })
+	.state("main.posts", {
+      url: "posts",
+      controller: MessageController,
+      controllerAs: "vm",
+      templateUrl: 'pages/posts.html'
+    })
     .state("main.messaging", {
       url: "messaging",
       controller: MessageController,

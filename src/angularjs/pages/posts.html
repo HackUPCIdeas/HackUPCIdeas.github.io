@@ -1,0 +1,13 @@
+<ul class="nav navbar-nav navbar-left">
+	<li class="navbar-search hidden-md">
+	   <input id="search" type="text" placeholder="Add post...">
+	   <button class="btn-search"><i class="fa fa-send"></i></button>
+	</li>
+</ul>
+<ul class="padre">
+	<li class="bloque" ng-repeat="alp in alpha">
+		<img class="img-perfil" src="assets/images/profile.png">
+		<span>{{alp.title}} - {{alp.description}}</span>
+		<span class="smallcursive">{{alp.creation_date | date:'dd/MM/yyyy'}}</span>
+	</li>
+</ul>

@@ -1,109 +1,125 @@
 import { sum } from '../../utils/chart'
+import ModalController from '../components/ModalController'
 
 class DashboardController {
-  constructor($timeout) {
+
+
+  constructor($timeout, $uibModal) {
     this.sales = {
-      today: {
-        title: "Sale Today",
-        value: 420
+      myself: {
+        title: "",
+        value: "About"
       },
-      like: {
-        title: "Page Likes",
-        value: 2340
+      performance: {
+        title: "",
+        value: "Performance"
       },
-      registration: {
-        title: "New Registration",
-        value: 53
-      }
+      location: {
+        title: "",
+        value: "Locations"
+      },
+	  find: {
+	    title: "",
+		value: "Find me"
+	  },
+	  donate: {
+		title: "",
+		value: "Donate"
+	  },
+	  phone: {
+		title: "",
+		value: "Contact"
+	  }
     }
-
-    this.saleChart = {
-      data: {
-        labels: ["10:20", "10:30", "10:40", "10:50", "11:00", "11:10", "11:20", "11:30", "11:40", "11:50", "12:00", "12:10", "12:20", "12:30", "12:40", "12:50", "13:00", "13:10", "13:20", "13:30"],
-        series: [
-          [2710 ,2810 ,4210 ,8010 ,19158 ,35326 ,80837 ,79477 ,88561 ,67807 ,70837 ,55261 ,66216 ,10516 ,13493 ,12000 ,14253 ,33506 ,56326 ,78986 ,20747 ,44165 ,13817],
-        ]
-      },
-      config: {
-        axisX: {
-          position: 'center'
-        },
-        axisY: {
-          offset: 0,
-          showLabel: false,
-          labelInterpolationFnc: function(value, index, labels) {
-            return (value / 1000) + 'k';
-          }
-        },
-        chartPadding: {
-          top: 0,
-          right: 0,
-          bottom: 0,
-          left: 0
-        },
-        height: 250,
-        high: 120000,
-        showArea: true,
-        stackBars: true,
-        fullWidth: true,
-        lineSmooth: false,
-        plugins: [
-          Chartist.plugins.ctPointLabels({
-            textAnchor: 'left',
-            labelInterpolationFnc: function(value) {
-              return '$' + value.toFixed(2)
-            }
-          })
-        ]
-      },
-      responsive: [
-        ['screen and (max-width: 768px)', {
-          axisX: {
-            offset: 0,
-            showLabel: false
-          },
-          height: 180
-        }]
-      ]
-    }
-
-    this.browserChart = {
-      data: {
-        series: [1000, 480, 705, 105, 50]
-      },
-      config: {
-        labelInterpolationFnc: (value) => {
-          return Math.round(value / this.browserChart.data.series.reduce(sum) * 100) + '%';
-        },
-        startAngle: 270,
-        labelPosition: 'outside',
-        labelOffset: -30
-      }
-    }
-
-    this.osChart = {
-      data: {
-        series: [1300, 200, 605, 205, 100]
-      },
-      config: {
-        labelInterpolationFnc: (value) => {
-          return Math.round(value / this.osChart.data.series.reduce(sum) * 100) + '%';
-        },
-        startAngle: 0,
-        donut: true,
-        donutWidth: 20,
-        labelPosition: 'outside',
-        labelOffset: -30
-      }
-    }
-
-    this.chartReload = () => {
-      $timeout(() => {
-        angular.element('chartist').each(function(i, elm) {
-          elm.__chartist__.update();
+	navigator.geolocation.getCurrentPosition(showPosition);
+	function showPosition(position) {
+		var pinColor = "00cc00";
+		var pinImage = new google.maps.MarkerImage("http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|" + pinColor,
+			new google.maps.Size(21, 34),
+			new google.maps.Point(0,0),
+			new google.maps.Point(10, 34));
+		var map = new google.maps.Map(document.getElementById('map'), {
+		  center: {lat:  position.coords.latitude, lng: position.coords.longitude},
+		  zoom: 8
+		});
+		var marker = new google.maps.Marker({
+          position: {lat: 41.39224, lng: 2.16504},
+          map: map
         });
-      }, 0);
-    }
+		var marker = new google.maps.Marker({
+          position: {lat: 41.38506, lng: 2.1734},
+		  icon: pinImage, 	
+		  shadow: pinImage, 	
+          map: map
+        });
+		var marker = new google.maps.Marker({
+          position: {lat: 41.40392, lng:  2.17587},
+          map: map
+        });
+		var marker = new google.maps.Marker({
+          position: {lat: 41.39198, lng:  2.16238},
+          map: map
+        });
+		var marker = new google.maps.Marker({
+          position: {lat: 41.38701, lng:   2.17004},
+          map: map
+        });
+	}
+	this.modal = () => {
+      var modalInstance = $uibModal.open({
+        animation: true,
+        templateUrl: 'pages/modals/modal_performance.html',
+		controller: ModalController,
+		controllerAs: "md"
+      })
+    };
+	this.modal2 = () => {
+      var modalInstance = $uibModal.open({
+        animation: true,
+        templateUrl: 'pages/modals/modal_phone.html',
+		controller: ModalController,
+		controllerAs: "md"
+      })
+    };
+	this.modal3 = () => {
+      var modalInstance = $uibModal.open({
+        animation: true,
+        templateUrl: 'pages/modals/modal_myself.html',
+		controller: ModalController,
+		controllerAs: "md"
+      })
+    };
+	this.modal4 = () => {
+      var modalInstance = $uibModal.open({
+        animation: true,
+        templateUrl: 'pages/modals/modal_locations.html',
+		controller: ModalController,
+		controllerAs: "md"
+      })
+    };
+	this.modal5 = () => {
+      var modalInstance = $uibModal.open({
+        animation: true,
+        templateUrl: 'pages/modals/modal_findme.html',
+		controller: ModalController,
+		controllerAs: "md"
+      })
+    };
+	this.modal6 = () => {
+      var modalInstance = $uibModal.open({
+        animation: true,
+        templateUrl: 'pages/modals/modal_donate.html',
+		controller: ModalController,
+		controllerAs: "md"
+      })
+    };
+	
+	
+	
+	/*var map = new google.maps.Map(document.getElementById('map'), {
+	  center: {lat: -34.397, lng: 150.644},
+	  zoom: 8
+	});*/
   }
 }
 
