@@ -1,0 +1,82 @@
+@@include('../../elements/floating/button.html')
+
+<div class="row">
+  <div class="col-xs-12">
+    <div class="card card-banner card-chart card-green no-br">
+      <div class="card-header">
+        <div class="card-title">
+          <div class="title">Top Sale Today</div>
+        </div>
+        <ul class="card-action">
+          <li>
+            <a href="/">
+              <i class="fa fa-refresh"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="card-body">
+        <div class="ct-chart-sale"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+      @@include('../../elements/card/banner.html',{ 
+        "value": "420",
+        "sign": "$",
+        "title": "ABOUT MYSELF", 
+        "icon": "fa fa-address-card-o",
+        "classname": "card-green-light"
+      })
+  </div>
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+      @@include('../../elements/card/banner.html',{ 
+        "value": "2453",
+        "sign": "",
+        "title": "performance", 
+        "icon": "fa fa-trophy",
+        "classname": "card-blue-light"
+      })
+  </div>
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+      @@include('../../elements/card/banner.html',{ 
+        "value": "50",
+        "sign": "",
+        "title": "frequent locations", 
+        "icon": "fa fa-location-arrow",
+        "classname": "card-yellow-light"
+      })
+  </div>
+   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+      @@include('../../elements/card/banner_small.html',{ 
+		"value": "420",
+        "sign": "$",
+        "title": "find me now", 
+        "content": "CONTACT INFORMATION",
+        "icon": "fa fa-phone",
+        "classname": "card-green-light"
+      })
+  </div>
+   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+      @@include('../../elements/card/banner.html',{ 
+        "value": "420",
+        "sign": "$",
+        "title": "find me now", 
+        "icon": "fa fa-map-marker",
+        "classname": "card-green-light"
+      })
+  </div>
+   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+      @@include('../../elements/card/banner.html',{ 
+        "value": "420",
+        "sign": "$",
+        "title": "donate", 
+        "icon": "fa fa-credit-card",
+        "classname": "card-green-light"
+      })
+  </div>
+  
+</div>
+
