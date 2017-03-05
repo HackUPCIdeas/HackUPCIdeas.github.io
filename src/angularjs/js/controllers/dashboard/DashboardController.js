@@ -40,7 +40,7 @@ class DashboardController {
 			new google.maps.Point(10, 34));
 		var map = new google.maps.Map(document.getElementById('map'), {
 		  center: {lat:  position.coords.latitude, lng: position.coords.longitude},
-		  zoom: 8
+		  zoom: 12
 		});
 		var marker = new google.maps.Marker({
           position: {lat: 41.39224, lng: 2.16504},
@@ -48,8 +48,8 @@ class DashboardController {
         });
 		var marker = new google.maps.Marker({
           position: {lat: 41.38506, lng: 2.1734},
-		  icon: pinImage, 	
-		  shadow: pinImage, 	
+		  icon: pinImage,
+		  shadow: pinImage,
           map: map
         });
 		var marker = new google.maps.Marker({
@@ -113,9 +113,9 @@ class DashboardController {
 		controllerAs: "md"
       })
     };
-	
-	
-	
+
+
+
 	/*var map = new google.maps.Map(document.getElementById('map'), {
 	  center: {lat: -34.397, lng: 150.644},
 	  zoom: 8

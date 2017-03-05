@@ -1,9 +1,9 @@
 export default {
   APP: "app",
-  TITLE: "<span class=\"highlight\">AppName</span>",
+  TITLE: "<img class=\"logo\" src=\"assets/images/logo.png\"></img>",
   PAGE: {
     "main.dashboard": {
-      menu: "",
+      menu: "dashboard",
       title: "",
       class: ""
     },
@@ -18,4 +18,4 @@ export default {
       class: "app-full"
     }
   }
-}	
+}

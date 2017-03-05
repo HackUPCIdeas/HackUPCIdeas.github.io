@@ -42,6 +42,27 @@
 body {
   font-size: 14px; }
 
+.content .value {
+  font-size: 20px !important; }
+
+.navbar-search #search {
+  width: 500px !important; }
+
+.navbar-search #search2 {
+  width: 500px !important; }
+
+.navbar-search #search3 {
+  width: 500px !important; }
+
+.modal-header {
+  padding-bottom: 5px !important; }
+
+.body-bottom {
+  padding-bottom: 60px !important; }
+
+.card-header {
+  padding: 10px !important; }
+
 .no-padding {
   padding: 0 !important; }
 
@@ -70,6 +91,65 @@ body {
 
 .a-right {
   text-align: right; }
+
+.reduceIT {
+  margin-top: 15px !important;
+  margin-bottom: 15px !important; }
+
+.blink {
+  color: green;
+  animation: blink-animation 1s steps(5, start) infinite;
+  -webkit-animation: blink-animation 1s steps(5, start) infinite; }
+
+@keyframes blink-animation {
+  to {
+    visibility: hidden; } }
+
+.papiXulo {
+  width: 100%; }
+
+.padre {
+  list-style: none;
+  width: 100%;
+  padding-left: 0; }
+
+.bloque {
+  height: 50px;
+  line-height: 50px;
+  background-color: white;
+  width: 100%;
+  border: 0px solid white;
+  margin-bottom: 15px;
+  border-radius: 25px 25px; }
+
+.bloque span {
+  margin-top: 15px !important;
+  padding-left: 15px; }
+
+.img-perfil {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px; }
+
+.smallcursive {
+  font-size: 9px;
+  font-family: italic;
+  float: right;
+  padding-right: 15px; }
+
+.elsDos h3 {
+  margin-top: 0;
+  margin-bottom: 0; }
+
+.elsDos {
+  margin-bottom: 0 !important; }
+
+.logo {
+  width: 280px;
+  height: 28px;
+  padding-left: 35px; }
 
 
 .sk-rotating-plane {
@@ -473,10 +553,12 @@ body {
     transform: perspective(140px) rotateY(180deg);
     opacity: 0; } }
 
-.flag-icon {
+.flag-icon-background, .flag-icon {
   background-size: contain;
   background-position: 50%;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; }
+
+.flag-icon {
   position: relative;
   display: inline-block;
   width: 1.33333em;
@@ -3116,7 +3198,6 @@ aside.app-sidebar {
             margin: 0 auto; }
   .app-login.__loading .app-block {
     filter: url("/assets/images/blur.svg#blur");
-    -webkit-filter: blur(2px);
     filter: blur(2px);
     transform: scale(0.8); }
   .app-login.__loading .loader-container {

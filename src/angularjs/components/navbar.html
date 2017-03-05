@@ -7,7 +7,7 @@
             <i class="fa fa-bars"></i>
           </button>
         </li>
-        <li class="logo"> 
+        <li class="logo">
           <a class="navbar-brand" href="#"><span class="highlight">app_name</span> </a>
         </li>
         <li>
@@ -18,9 +18,17 @@
       </ul>
 
       <ul class="nav navbar-nav navbar-left">
-        
-        <li class="navbar-search hidden-md">
+
+        <li class="navbar-search hidden-md" ng-if="main.page.menu != 'posts' && main.page.menu != 'messaging'">
           <input id="search" type="text" placeholder="Search for performers...">
+          <button class="btn-search"><i class="fa fa-search"></i></button>
+        </li>
+        <li class="navbar-search hidden-md" ng-if="main.page.menu == 'posts'">
+          <input id="search2" type="text" ng-model="obj.desc" placeholder="Add a post...">
+          <button class="btn-search" ng-click="save()"><i class="fa fa-send"></i></button>
+        </li>
+        <li class="navbar-search hidden-md" ng-if="main.page.menu == 'messaging'">
+          <input id="search3" type="text" placeholder="Search for messages...">
           <button class="btn-search"><i class="fa fa-search"></i></button>
         </li>
       </ul>
@@ -33,34 +41,7 @@
             <img class="profile-img" src="assets/images/profile.png">
             <div class="title">Profile</div>
           </a>
-          <div class="dropdown-menu">
-            <div class="profile-info">
-              <h4 class="username">Scott White</h4>
-            </div>
-            <ul class="action">
-              <li>
-                <a href="#">
-                  Profile
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <span class="badge badge-danger pull-right">5</span>
-                  My Inbox
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  Setting
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  Logout
-                </a>
-              </li>
-            </ul>
-          </div>
+
         </li>
       </ul>
     </div>

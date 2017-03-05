@@ -1,11 +1,14 @@
-<div class="row hahahhaahha">
-  <div class="col-xs-12 hahahhaahha">
-	 <h3 class="blink"> <img src="http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|00cc00"/> The artist is live now</h3>
+<div class="row reduceIT">
+  <div class="col-xs-7 elsDos">
+	 <h3 > <img class="blink" src="http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|00cc00"/> The artist is live now</h3>
+  </div>
+  <div class="col-xs-5 elsDos" align="right">
+	 <h3 class=""> <img src="http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|ff0000"/> Frequent performance spots</h3>
   </div>
 </div>
 <div class="row">
-  <div class="col-xs-12">	
-    <div class="card card-banner card-chart card-green">		
+  <div class="col-xs-12">
+    <div class="card card-banner card-chart ">
       <div class="card-header">
 		<div id="map" style="height: 250px; width: 100%;"></div>
       </div>
@@ -22,10 +25,10 @@
 <div class="row" >
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12" ng-click="vm.modal3();">
     <a href="#">
-      @@include('../../elements/card/banner.html',{ 
+      @@include('../../elements/card/banner.html',{
         "value": "{{vm.sales.myself.value}}",
         "sign": "",
-        "title": "{{vm.sales.myself.title}}", 
+        "title": "{{vm.sales.myself.title}}",
         "icon": "fa fa-user-circle-o",
         "classname": "card-green-light"
       })
@@ -33,23 +36,23 @@
   </div>
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12" ng-click="vm.modal();">
     <a href="#" >
-      @@include('../../elements/card/banner.html',{ 
+      @@include('../../elements/card/banner.html',{
         "value": "{{vm.sales.performance.value}}",
         "sign": "",
-        "title": "{{vm.sales.performance.title}}", 
+        "title": "{{vm.sales.performance.title}}",
         "icon": "fa fa-music ",
         "classname": "card-blue-light"
       })
     </a>
   </div>
-  
+
 
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12" ng-click="vm.modal6();">
     <a href="#">
-      @@include('../../elements/card/banner.html',{ 
+      @@include('../../elements/card/banner.html',{
         "value": "{{vm.sales.donate.value}}",
         "sign": "",
-        "title": "{{vm.sales.donate.title}}", 
+        "title": "{{vm.sales.donate.title}}",
         "icon": "fa fa-handshake-o",
         "classname": "card-yellow-light"
       })
